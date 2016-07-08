@@ -14,7 +14,7 @@
         >
 
         <TextView
-            android:id="@+id/hello_text"
+            android:id="@+id/body"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hello World!"

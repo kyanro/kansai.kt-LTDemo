@@ -1,26 +1,26 @@
 package com.kyanro.ltdemo
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-
 import com.kyanro.ltdemo.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        binding.body.setOnClickListener {
+            val intent: Intent = Intent(this, SubActivity::class.java)
+            startActivity(intent)
+        }
 
-        val myData = MyData()
+        val container = Container()
 
-        myData.hoge = "Data"
-        myData.fuga = "Binding!"
-
-        binding.helloText.text = myData.hoge + " " + myData.fuga
-
-        AccessorChecker.checkAccessor();
+        // setter getter が1つずつある////
+        container.data = "MainActivity!"
+        binding.body.text = container.data
+        //////////////////////////////////
     }
 }
