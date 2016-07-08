@@ -8,7 +8,7 @@ import android.util.Log;
 public class AccessorChecker {
     public static void checkAccessor() {
         MyData myData = new MyData();
-        myData.setFuga("bbb");
-        Log.d("mylog", myData.getFuga());
+        myData.fuga = "bbb";
+        Log.d("mylog", myData.fuga);
     }
 }
