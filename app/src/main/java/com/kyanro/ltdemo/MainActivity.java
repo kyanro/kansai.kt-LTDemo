@@ -1,9 +1,12 @@
 package com.kyanro.ltdemo;
 
 import android.annotation.SuppressLint;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import com.kyanro.ltdemo.databinding.ActivityMainBinding;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,16 +17,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        TextView hello = (TextView) findViewById(R.id.hello_text);
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         MyData myData = new MyData();
 
-        myData.setHoge("Hello");
-        myData.setFuga("World");
+        myData.setHoge("Data");
+        myData.setFuga("Binding!");
 
-        hello.setText(myData.getHoge() + " " + myData.getFuga());
+        binding.helloText.setText(myData.getHoge() + " " + myData.getFuga());
     }
 
     static class MyData {
