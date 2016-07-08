@@ -16,9 +16,11 @@ class MainActivity : AppCompatActivity() {
 
         val myData = MyData()
 
-        myData.setHoge("Data")
-        myData.setFuga("Binding!")
+        myData.hoge = "Data"
+        myData.fuga = "Binding!"
 
-        binding.helloText.text = myData.getHoge() + " " + myData.getFuga()
+        binding.helloText.text = myData.hoge + " " + myData.fuga
+
+        AccessorChecker.checkAccessor();
     }
 }
