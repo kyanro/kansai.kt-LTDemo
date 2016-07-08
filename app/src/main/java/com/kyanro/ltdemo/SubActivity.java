@@ -16,8 +16,8 @@ public class SubActivity extends AppCompatActivity {
         Container container = new Container();
 
         // setter getter が1つずつある///////
-        container.setData("SubActivity!");
-        binding.body.setText(container.getData());
+        container.data = "SubActivity!";
+        binding.body.setText(container.data);
         /////////////////////////////////////
     }
 }
