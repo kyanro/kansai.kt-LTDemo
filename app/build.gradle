@@ -47,6 +47,12 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.0.0'
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    kapt "com.android.databinding:compiler:2.1.2"
 
     provided "org.projectlombok:lombok:1.12.6"
+    kapt "org.projectlombok:lombok:1.12.6"
+}
+
+kapt {
+    generateStubs = true
 }
